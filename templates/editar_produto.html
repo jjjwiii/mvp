@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Produto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://app.iexperience-app.com/assets/vuexy/vendor/css/rtl/core.css" />
+    <link rel="stylesheet" href="https://app.iexperience-app.com/assets/vuexy/vendor/css/rtl/theme-default.css" />
+    <link href="https://app.iexperience-app.com/assets/vuexy/css/demo.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="content">
+        <header class="menu">
+            <div class="logo-left">
+                <img src="https://app.iexperience-app.com/img/logo-name-iex.png" alt="Logo Esquerda">
+            </div>
+            <div class="logo-right">
+                <span>Olá, {{ session['user_name'] }}</span>
+                <img src="https://app.iexperience-app.com/assets/img/avatars/14.png" alt="Logo Direita">
+            </div>
+        </header>
+        
+        <div class="container mt-5">
+            <h1 class="mb-4">Editar Produto</h1>
+            <form id="form-editar-produto" method="POST" action="/editar_produto/{{ produto.id }}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="{{ produto.nome }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" required>{{ produto.descricao }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input type="number" id="preco" name="preco" step="0.01" value="{{ produto.preco }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="link_afiliado">Link de Afiliado:</label>
+                    <input type="text" id="link_afiliado" name="link_afiliado" value="{{ produto.link_afiliado }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="foto">Foto:</label>
+                    <input type="file" id="foto" name="foto">
+                    <img src="/static/{{ produto.foto }}" alt="{{ produto.nome }}" width="100">
+                </div>
+                <button type="submit" class="btn-confirmar">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para enviar o formulário via AJAX
+        document.getElementById('form-editar-produto').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                    window.location.href = "/meus_produtos";  // Redireciona para a lista de produtos
+                } else {
+                    alert(data.error);
+                }
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+</html>

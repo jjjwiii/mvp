@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Painel Administrativo</h1>
+
+        <!-- Novo painel com quadrados para as métricas -->
+    <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+        <div style="width: 22%; padding: 20px; background-color: #3498db; color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3>Total de Inscritos</h3>
+            <p>{{ total_inscritos }}</p>
+        </div>
+        <div style="width: 22%; padding: 20px; background-color: #3498db; color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3>Total de Compradores</h3>
+            <p>{{ total_compradores }}</p>
+        </div>
+        <div style="width: 22%; padding: 20px; background-color: #3498db; color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3>Inscritos com indicador</h3>
+            <p>{{ total_indicados }}</p>
+        </div>
+        <div style="width: 22%; padding: 20px; background-color: #3498db; color: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h3>Total a Ser Pago em Comissões</h3>
+            <p>R$ {{ total_comissoes }}</p>
+        </div>
+    </div>
+
+        <h2>Lista de Inscritos</h2>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>WhatsApp</th>
+                <th>Indicador</th>
+                <th>Status de Compra</th>
+            </tr>
+            {% for inscrito in inscritos %}
+            <tr>
+                <td>{{ inscrito[1] }}</td>
+                <td>{{ inscrito[2] }}</td>
+                <td>{{ inscrito[3] }}</td>
+                <td>{{ inscrito[5] if inscrito[5] else 'Nenhum' }}</td>
+                <td>{{ 'Comprou' if inscrito[4] else 'Não Comprou' }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Ranking de Indicações</h2>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Total de Indicações</th>
+            </tr>
+            {% for rank in ranking %}
+            <tr>
+                <td>{{ rank[1] }}</td>
+                <td>{{ rank[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Comissões por Nível</h2>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Nível</th>
+                <th>Total de Comissão</th>
+            </tr>
+            {% for comissao in comissoes %}
+            <tr>
+                <td>{{ comissao[1] }}</td>
+                <td>{{ comissao[2] }}</td>
+                <td>R$ {{ "%.2f"|format(comissao[3]) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    
+    
+        
+
+    
+
+    <div class="footer">
+        <p>&copy; 2025 Painel Administrativo</p>
+    </div>
+</body>
+</html>

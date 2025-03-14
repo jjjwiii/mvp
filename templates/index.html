@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento Multinível</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 42px; /* Tamanho maior para desktop */
+        }
+        .section {
+            text-align: center;
+            margin: 50px auto; /* Centraliza e adiciona espaçamento */
+            max-width: 800px; /* Limita a largura do conteúdo */
+        }
+        .section1 {
+            text-align: center;
+            padding: 40px 10%; /* Mais padding para telas maiores */
+            background-color: #1d1c1c;
+            border-radius: 10px;
+            margin: 50px auto; /* Centraliza e adiciona espaçamento */
+            max-width: 800px; /* Limita a largura do conteúdo */
+        }
+        .section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: #FF6600;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px 40px; /* Botão maior para desktop */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: darkorange;
+            transform: translateY(-2px);
+        }
+        .divider {
+            border-top: 2px solid white;
+            margin: 50px 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #1d1c1c;
+            padding: 40px;
+            border-radius: 10px;
+            width: 500px; /* Largura maior para desktop */
+            max-width: 90%;
+            text-align: center;
+        }
+        .modal input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .modal button {
+            width: 100%;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Estilos específicos para telas maiores */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 48px; /* Tamanho maior para desktop */
+            }
+            .section p {
+                font-size: 20px; /* Tamanho maior para desktop */
+            }
+            .section1 {
+                padding: 50px 15%; /* Mais padding para telas maiores */
+            }
+            .section1 p {
+                font-size: 16px; /* Tamanho maior para desktop */
+            }
+            button {
+                font-size: 24px; /* Botão maior para desktop */
+                padding: 25px 50px;
+            }
+            .modal-content {
+                width: 600px; /* Largura maior para desktop */
+            }
+        }
+
+        /* Responsividade para telas menores (mantido do código original) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            .section p {
+                font-size: 16px;
+            }
+            .modal-content {
+                width: 90%;
+                padding: 20px;
+            }
+            button {
+                font-size: 18px;
+                padding: 16px 30px;
+            }
+            .divider {
+                margin: 30px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            .section p {
+                font-size: 14px;
+            }
+            .modal-content {
+                width: 100%;
+                padding: 15px;
+            }
+            button {
+                font-size: 16px;
+                padding: 14px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="section">
+        <img src="https://eronex.store/missaocod.png" alt="Logo" width="200" height="200">
+        <h1>
+            NOVA PLATAFORMA <span style="color: #fc6500;">SECRETA</span> ESTÁ MUDANDO O JOGO DO 
+            <span style="color: #fc6500;">CASH ON DELIVERY</span> NO BRASIL, QUER SABER COMO?
+        </h1>        
+        <div id="ifr_67cbfe6db79aabd692552200_wrapper" style="margin: 0 auto; width: 100%">
+            <div style="padding: 56.25% 0 0 0; position: relative;" id="ifr_67cbfe6db79aabd692552200_aspect">
+                <iframe frameborder="0" allowfullscreen src="https://scripts.converteai.net/1744423d-dafe-4b05-8de6-b21328dacde3/players/67cbfe6db79aabd692552200/embed.html" id="ifr_67cbfe6db79aabd692552200" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin"></iframe>
+            </div>
+        </div>
+        <button id="inscreverButton">QUERO ME INSCREVER GRATUITAMENTE!</button>
+    </div>
+
+    <!-- About Josué Wicaro Section -->
+    <div class="section1">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <h2 style="color: white;">
+                QUEM É <span style="color: orange;">JOSUÉ WICARO?</span>
+            </h2>
+        </div>        
+        <p style="font-size: 16px; font-weight: 400; line-height: 1.8; text-align: left; text-transform: lowercase; color: #F1F5F9;">
+            <span style="text-transform: capitalize;">Especialista</span> em marketing digital com mais de 8 anos de experiência, já faturei múltiplos 6 dígitos com tráfego direto e Cash on Delivery.
+        </p>
+        <p style="font-size: 16px; font-weight: 400; line-height: 1.8; text-align: left; text-transform: lowercase; color: #F1F5F9;">
+            <span style="text-transform: capitalize;">Atuo</span> em diversas frentes do marketing digital, incluindo web design, copywriting, design, edição de vídeo, gestão de contas, gestão de marketing, lançamentos e infoprodutos. Minha expertise está na criação e modelagem de ofertas vencedoras, além do desenvolvimento de estratégias sólidas para tráfego pago que geram resultados reais.
+        </p>
+        <p style="font-size: 16px; font-weight: 400; line-height: 1.8; text-align: left; text-transform: lowercase; color: #F1F5F9;">
+            <span style="text-transform: capitalize;">Sou</span> apaixonado por desafios, inovação e pelo impacto que um bom posicionamento pode gerar. Minha missão é transformar negócios e potencializar marcas no digital, sempre buscando novas oportunidades para crescer e escalar resultados.
+        </p>
+        <img src="https://eronex.store/josue.png" alt="JOSUÉ WICARO" width="100%" height="auto">
+    </div>
+
+    <!-- Footer -->
+    <div class="divider" style="background-color: #333333; height: 60px; width: 100%; display: flex; justify-content: center; align-items: center;">
+        <p style="margin: 0; color: white; font-size: 14px;">&copy; 2025 Josué Wicaro - Todos os direitos reservados</p>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 style="font-size: 20px; font-weight: 400;">
+                Após o <strong style="font-weight: bold;">Missão COD</strong> você terá um plano personalizado para começar a fazer ganhos nos próximos dias
+            </h2>
+            <form id="cadastroForm">
+                <input type="text" id="nome" placeholder="Seu Nome" required><br>
+                <input type="email" id="email" placeholder="Seu Email" required><br>
+                <input type="text" id="whatsapp" placeholder="Seu WhatsApp" required><br>
+                <input type="hidden" id="ref" value="">
+                <button type="submit" style="border-radius: 30px; margin: 20px 0px 20px 0px; box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);">CONFIRMAR INSCRIÇÃO</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Abrir modal ao clicar no botão
+        document.getElementById("inscreverButton").addEventListener("click", function () {
+            document.getElementById("modal").style.display = "flex";
+        });
+
+        // Fechar o modal quando o formulário for enviado
+        document.getElementById("cadastroForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let nome = document.getElementById("nome").value;
+            let email = document.getElementById("email").value;
+            let whatsapp = document.getElementById("whatsapp").value;
+            let ref = document.getElementById("ref").value;
+            fetch("/cadastro", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome, email, whatsapp, ref })
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = data.link_indicacao;
+            });
+        });
+
+        // Carregar parâmetro de referência da URL
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById("ref").value = urlParams.get("ref") || "";
+        });
+
+        // Fechar modal ao clicar fora da área de conteúdo
+        document.getElementById("modal").addEventListener("click", function (event) {
+            if (event.target === this) {
+                this.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

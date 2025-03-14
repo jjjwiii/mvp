@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs de Webhooks</title>
+</head>
+<body>
+    <h1>Logs de Webhooks Recebidos</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Usuário</th>
+            <th>Token</th>
+            <th>Dados Recebidos</th>
+            <th>Data de Recebimento</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td><pre>{{ log[3] }}</pre></td>
+            <td>{{ log[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/admin">Voltar para o Painel de Admin</a>
+</body>
+</html>

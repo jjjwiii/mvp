@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link de Convite</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 20px;
+            font-size: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .section {
+            text-align: center;
+            margin: 5px 0; /* Reduzi o espaçamento entre as seções */
+            width: 100%;
+            max-width: 800px;
+        }
+        .section p {
+            font-size: 20px;
+            color: #ddd;
+            margin: 20px 20px;
+        }
+        
+        .link-container {
+            margin: 10px 0; /* Reduzi o espaçamento ao redor do link-container */
+            padding: 10px 15px; /* Padding ajustado */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .link-container a {
+            color: #FF6600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-container a:hover {
+            text-decoration: underline;
+        }
+        .link-container p {
+            margin: 10px 0; /* Ajustei o espaçamento interno do parágrafo */
+        }
+        button {
+            background-color: #FF6600;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px; /* Reduzi o margin-top */
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 85%; /* Faz os botões terem a mesma largura */
+        }
+
+        .whatsapp { 
+            background-color: #17980E;
+        }
+
+
+        button:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        video {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            max-width: 100%;
+            height: auto;
+        }
+        .logo {
+            display: block;
+            margin: 20px auto 20px; /* Centraliza a imagem e adiciona margem abaixo */
+            max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px; /* Adiciona bordas arredondadas (opcional) */
+            max-width: 70%;
+        }
+
+
+
+
+              
+
+    </style>
+</head>
+<body>
+    <!-- Título e Video -->
+    <div class="section">
+        <img src="https://eronex.store/missaocod.png" alt="Logo" class="logo">
+        <h1>INSCRIÇÃO CONCLUÍDA COM SUCESSO… MAS ESPERE! TEMOS UMA OPORTUNIDADE EXCLUSIVA: <span style="color: #fc6500;">AGORA VOCÊ PODE LUCRAR ANTES MESMO DO EVENTO!</span></h1>
+        <p>ASSISTA O VIDEO ABAIXO PARA SABER COMO!</p>
+        <video width="90%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+
+    <!-- Link de Convite -->
+    <div class="section">
+        <div class="link-container">
+            <p><a href="seusite.com/lancamento?ref={{ codigo }}">seusite.com/lancamento?ref={{ codigo }}</a></p>
+        </div>
+        <button onclick="copiarLink()">Copiar Link</button>
+        <button class="whatsapp" onclick="window.location.href='https://api.whatsapp.com/send?phone=seunumero&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Lançamento%20Multinível.'">Ir para o Grupo do WhatsApp</button>
+    </div>
+
+
+    <script>
+        // Função para copiar o link para a área de transferência
+        function copiarLink() {
+            var link = document.querySelector('.link-container a');
+            var range = document.createRange();
+            range.selectNode(link);
+            window.getSelection().removeAllRanges();  // Limpa as seleções anteriores
+            window.getSelection().addRange(range);  // Seleciona o texto
+            document.execCommand("copy");  // Copia o texto selecionado
+            window.getSelection().removeAllRanges();  // Limpa a seleção após copiar
+            alert("Link copiado para a área de transferência!");
+        }
+    </script>
+</body>
+</html>
