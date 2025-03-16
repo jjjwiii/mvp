@@ -1,17 +1,7 @@
 app = "my-flask-app"
 
 [build]
-  image = "python:3.12-slim"  # ou outra versão
+  builder = "heroku/buildpacks:python"
 
 [env]
   PYTHON_VERSION = "3.9"  # Ou outra versão que você queira usar
-
-[[services]]
-  internal_port = 8080
-  protocol = "tcp"
-  script = "python app.py"
-
-  [[services.concurrency]]
-    type = "http"
-    port = 8080
-    protocol = "http"
