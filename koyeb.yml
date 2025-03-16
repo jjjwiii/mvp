@@ -1,0 +1,7 @@
+name: my-flask-app
+services:
+  - name: web
+    image: python:3.9
+    command: python app.py  # Comando para rodar o Flask
+    ports:
+      - 8080  # Porta para expor a aplicação
