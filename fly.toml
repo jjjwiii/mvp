@@ -1,0 +1,7 @@
+app = "app"
+
+[build]
+  builder = "heroku/buildpacks:python"  # Use o buildpack para Python (geralmente o Fly.io já detecta automaticamente)
+
+[env]
+  PYTHON_VERSION = "3.9"  # Ou outra versão estável
