@@ -1,7 +1,13 @@
-app = "app"
+app = "my-flask-app"
 
 [build]
-  builder = "heroku/buildpacks:python"  # Use o buildpack para Python (geralmente o Fly.io já detecta automaticamente)
+  builder = "heroku/buildpacks:python"  # Usando o buildpack para Python (Flask)
 
 [env]
-  PYTHON_VERSION = "3.9"  # Ou outra versão estável
+  PYTHON_VERSION = "3.9"  # Ou a versão que você deseja
+
+[services]
+  [[services.concurrency]]
+  type = "http"
+  port = 8080
+  protocol = "http"
