@@ -1,7 +1,4 @@
 app = "my-flask-app"
 
-[build]
-  builder = "heroku/buildpacks:python"
-
 [env]
   PYTHON_VERSION = "3.9"  # Ou outra versão que você queira usar
